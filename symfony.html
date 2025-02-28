@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Symfony - Installation et Utilisation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">StudyConnect</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="wordpress.html">Guide WordPress</a></li>
+        <li class="nav-item"><a class="nav-link" href="symfony.html">Guide Symfony</a></li>
+        <li class="nav-item"><a class="nav-link" href="laravel.html">Guide Laravel</a></li>
+        <li class="nav-item"><a class="nav-link" href="docker.html">Guide Docker</a></li>
+        <li class="nav-item"><a class="nav-link" href="git.html">Guide Git</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Guide complet d'installation et d'utilisation de Symfony</h1>
+    
+    <h2>1. Introduction</h2>
+    <p>Symfony est un framework PHP performant et flexible pour développer des applications web robustes et évolutives.</p>
+    
+    <h2>2. Prérequis</h2>
+    <ul>
+      <li>PHP 7.4 ou supérieur</li>
+      <li>Composer</li>
+      <li>Un serveur web (Apache, Nginx)</li>
+    </ul>
+    
+    <h2>3. Installation de Symfony</h2>
+    <h3>3.1. Installation du Symfony CLI</h3>
+    <pre class="bg-light p-3 border rounded"><code>brew install symfony-cli</code></pre>
+    
+    <h3>3.2. Création d'un nouveau projet Symfony</h3>
+    <pre class="bg-light p-3 border rounded"><code>symfony new my_project --webapp</code></pre>
+    
+    <h3>3.3. Lancer le serveur Symfony</h3>
+    <pre class="bg-light p-3 border rounded"><code>cd my_project
+symfony serve</code></pre>
+    
+    <h2>4. Utilisation de Symfony</h2>
+    <h3>4.1. Structure du projet</h3>
+    <p>Symfony adopte le pattern MVC (Modèle-Vue-Contrôleur) et propose une architecture modulaire pour faciliter le développement.</p>
+    
+    <h3>4.2. Utilisation de Twig</h3>
+    <p>Twig est le moteur de templates par défaut de Symfony. Voici un exemple d'utilisation dans un contrôleur :</p>
+    <pre class="bg-light p-3 border rounded"><code>return $this->render('home.html.twig', ['variable' => 'Valeur']);</code></pre>
+    
+    <h2>5. Conclusion</h2>
+    <p>Symfony est un framework moderne qui simplifie la création d'applications web. Ce guide présente les étapes essentielles pour installer et démarrer avec Symfony.</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

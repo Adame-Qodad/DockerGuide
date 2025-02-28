@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Laravel - Installation et Utilisation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StudyConnect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="wordpress.html">Guide WordPress</a></li>
+          <li class="nav-item"><a class="nav-link" href="symfony.html">Guide Symfony</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="laravel.html">Guide Laravel</a></li>
+          <li class="nav-item"><a class="nav-link" href="docker.html">Guide Docker</a></li>
+          <li class="nav-item"><a class="nav-link" href="git.html">Guide Git</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Guide complet d'installation et d'utilisation de Laravel</h1>
+    
+    <h2>1. Introduction</h2>
+    <p>Laravel est un framework PHP moderne qui offre une syntaxe élégante et des outils intégrés pour simplifier le développement d'applications web robustes.</p>
+    
+    <h2>2. Prérequis</h2>
+    <ul>
+      <li>PHP 7.4 ou supérieur</li>
+      <li>Composer (assurez-vous que Composer est installé)</li>
+      <li>Un serveur web (Apache, Nginx) pour l'hébergement de l'application</li>
+    </ul>
+    
+    <h2>3. Installation de Laravel</h2>
+    <h3>3.1. Installation via Composer (Méthode 1)</h3>
+    <p>Créez un nouveau projet Laravel en utilisant Composer :</p>
+    <pre class="bg-light p-3 border rounded"><code>composer create-project --prefer-dist laravel/laravel my_project</code></pre>
+    
+    <h3>3.2. Installation via Laravel Installer (Méthode 2)</h3>
+    <p>Vous pouvez également installer l'outil Laravel Installer globalement et créer un nouveau projet :</p>
+    <pre class="bg-light p-3 border rounded"><code>composer global require laravel/installer
+laravel new my_project</code></pre>
+    
+    <h3>3.3. Lancer le serveur de développement</h3>
+    <p>Une fois le projet créé, déplacez-vous dans le répertoire et lancez le serveur :</p>
+    <pre class="bg-light p-3 border rounded"><code>cd my_project
+php artisan serve</code></pre>
+    
+    <h2>4. Utilisation de Laravel</h2>
+    <h3>4.1. Structure du projet</h3>
+    <p>Laravel organise votre code en suivant le pattern MVC (Modèle-Vue-Contrôleur) et offre de nombreux outils pour accélérer le développement.</p>
+    
+    <h3>4.2. Artisan, le CLI de Laravel</h3>
+    <p>Artisan est l'outil en ligne de commande intégré de Laravel qui permet d'exécuter diverses tâches. Par exemple, pour lister toutes les commandes disponibles :</p>
+    <pre class="bg-light p-3 border rounded"><code>php artisan list</code></pre>
+    
+    <h2>5. Conclusion</h2>
+    <p>Laravel est un framework puissant qui simplifie la création d'applications web grâce à son écosystème riche. Ce guide vous permet de démarrer rapidement avec les étapes d'installation et d'utilisation de base.</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

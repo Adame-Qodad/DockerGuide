@@ -1,41 +1,69 @@
-# Documentation des Outils de Développement
+# Guides d'utilisation des Outils de Développement
 
-Bienvenue sur ce projet qui regroupe plusieurs guides d'utilisation pour les outils essentiels au développement, tels que **Git**, **Docker**, et **Symfony avec Twig**. Ce site a pour but de fournir une documentation claire et accessible aux développeurs souhaitant apprendre ou approfondir leurs connaissances sur ces technologies.
+Bienvenue dans ce dépôt de guides d'utilisation pour divers outils de développement tels que **WordPress**, **Symfony**, **Laravel**, **Docker** et **Git**. Ce projet a pour objectif de fournir des ressources complètes et actualisées pour aider les développeurs à maîtriser ces technologies.
+
+> **Important :** Ce dépôt est en constante évolution. Nous mettons régulièrement à jour et enrichissons les guides afin de refléter les dernières pratiques et nouveautés.
+
+## Table des matières
+
+- [Introduction](#introduction)
+- [Structure du projet](#structure-du-projet)
+- [Guides disponibles](#guides-disponibles)
+  - [Guide WordPress](#guide-wordpress)
+  - [Guide Symfony](#guide-symfony)
+  - [Guide Laravel](#guide-laravel)
+  - [Guide Docker](#guide-docker)
+  - [Guide Git](#guide-git)
+- [Navigation](#navigation)
+- [Contribution](#contribution)
+- [Licence](#licence)
+
+## Introduction
+
+Ce dépôt regroupe plusieurs guides d'utilisation sous forme de pages web statiques. Chaque guide aborde en détail l'installation, les concepts clés, ainsi que les commandes et pratiques avancées pour chaque outil. L'objectif est de fournir une référence rapide et accessible aux développeurs.
+
+## Structure du projet
+
+- **index.html** : La page d'accueil présentant une vue d'ensemble du projet.
+- **wordpress.html** : Guide complet d'installation et d'utilisation de WordPress.
+- **symfony.html** : Guide complet d'installation et d'utilisation de Symfony.
+- **laravel.html** : Guide complet d'installation et d'utilisation de Laravel.
+- **docker.html** : Guide complet d'utilisation de Docker.
+- **git.html** : Guide complet d'utilisation de Git.
+- **navbar.html** : Barre de navigation réutilisable pour faciliter la navigation entre les pages.
+- **README.md** : Ce fichier de documentation général.
+
+## Guides disponibles
+
+### Guide WordPress
+Ce guide couvre l'installation, la configuration et l'utilisation de WordPress pour créer et gérer des sites web dynamiques.
+
+### Guide Symfony
+Ce guide explique comment installer Symfony, créer un nouveau projet, et utiliser Twig pour le rendu des vues.
+
+### Guide Laravel
+Ce guide fournit des instructions détaillées pour installer Laravel, lancer un projet et utiliser Artisan pour simplifier le développement.
+
+### Guide Docker
+Ce guide aborde l'installation, les concepts clés, les commandes essentielles, et des astuces avancées pour utiliser Docker efficacement, incluant la génération de documentation PHP.
+
+### Guide Git
+Ce guide couvre l'installation, les commandes essentielles et les bonnes pratiques pour utiliser Git comme système de gestion de versions.
+
+## Navigation
+
+Les différentes pages du projet sont interconnectées via une barre de navigation commune (disponible dans le fichier `navbar.html`). Cela permet de naviguer facilement entre la page d'accueil et les différents guides.
+
+## Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer un guide, ajouter de nouvelles sections ou corriger des erreurs, merci de :
+- Ouvrir une *issue* pour discuter de vos propositions.
+- Soumettre une *pull request* avec vos modifications.
+
+## Licence
+
+Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser et de le modifier.
 
 ---
 
-## 🌍 Présentation du Site
-
-Le site propose des guides détaillés et évolutifs sur différentes technologies utilisées en développement web et logiciel. Il est structuré en plusieurs pages accessibles via une barre de navigation commune.
-
-### 📌 Fonctionnalités :
-- **Guides détaillés** pour apprendre et maîtriser Git, Docker, et Symfony.
-- **Navigation fluide** grâce à une barre de menu réutilisable.
-- **Exemples de commandes** faciles à copier et coller pour une utilisation rapide.
-- **Mises à jour régulières** pour refléter les évolutions technologiques et bonnes pratiques.
-
----
-
-## 📂 Structure du Site
-
-Le projet est organisé en plusieurs fichiers HTML :
-
-- **`index.html`** → Page d'accueil qui présente le site et son contenu.
-- **`guides.html`** → Page regroupant les guides d'utilisation.
-- **`docker_git.html`** → Documentation détaillée sur Docker et Git.
-- **`navbar.html`** → Fichier de barre de navigation réutilisable pour toutes les pages.
-- **`README.md`** → Ce fichier, qui sert de documentation globale du projet.
-
----
-
-## 📖 Guides Disponibles
-
-### 🔹 Guide Docker & Git
-Cette page regroupe les deux guides essentiels :
-- **Docker** : Explication des concepts clés, installation, commandes principales et documentation avancée.
-- **Git** : Introduction au versioning, installation, commandes de base et bonnes pratiques.
-
-### 🔹 Guide Symfony & Twig
-- Installation et création d'un projet Symfony.
-- Utilisation de Twig pour générer des vues dynamiques.
-- Commandes utiles pour gérer un projet Symfony.
+*Note : Ce dépôt est en constante évolution. Nous nous efforçons de maintenir ces guides à jour et de les enrichir en fonction des retours et des avancées technologiques.*
