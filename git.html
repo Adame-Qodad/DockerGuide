@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Git - Guide d'utilisation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Insertion du Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="index.html">StudyConnect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+           <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="docker.html">Guide Docker</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="git.html">Guide Git</a>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Guide complet d'utilisation de Git</h1>
+
+    <!-- 1. Introduction -->
+    <div class="mb-4">
+      <h2>1. Introduction à Git</h2>
+      <p>Git est un système de gestion de version distribué permettant de suivre l'historique de vos projets et de collaborer efficacement avec d'autres développeurs.</p>
+    </div>
+
+    <!-- 2. Installation -->
+    <div class="mb-4">
+      <h2>2. Installation de Git</h2>
+      <h3>Windows</h3>
+      <ol>
+        <li>Télécharger l'installateur depuis le site officiel : <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a></li>
+        <li>Exécuter l'installateur et suivre les instructions</li>
+      </ol>
+      <h3>macOS</h3>
+      <div class="mb-3">
+        <pre class="bg-light p-3 border rounded"><code>brew install git</code></pre>
+      </div>
+      <h3>Linux</h3>
+      <div class="mb-3">
+        <pre class="bg-light p-3 border rounded"><code>sudo apt update
+sudo apt install git</code></pre>
+      </div>
+    </div>
+
+    <!-- 3. Concepts clés -->
+    <div class="mb-4">
+      <h2>3. Concepts clés</h2>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Dépôt (Repository)</strong> : L'endroit où est stocké l'historique du code.</li>
+        <li class="list-group-item"><strong>Commit</strong> : Un snapshot des modifications.</li>
+        <li class="list-group-item"><strong>Branche (Branch)</strong> : Une version parallèle du projet pour développer de nouvelles fonctionnalités.</li>
+        <li class="list-group-item"><strong>Merge</strong> : L'intégration des modifications d'une branche dans une autre.</li>
+        <li class="list-group-item"><strong>Remote</strong> : Un dépôt distant (ex : GitHub, GitLab) permettant la collaboration.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Commandes Git essentielles -->
+    <div class="mb-4">
+      <h2>4. Commandes Git essentielles</h2>
+      <div class="mb-3">
+        <pre class="bg-light p-3 border rounded"><code># Cloner un dépôt
+git clone &lt;url_du_dépôt&gt;</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Ajouter des fichiers au staging
+git add &lt;fichier&gt;  ou  git add .</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Valider les modifications
+git commit -m "Message du commit"</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Envoyer les commits vers le dépôt distant
+git push</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Récupérer les modifications du dépôt distant
+git pull</code></pre>
+      </div>
+    </div>
+
+    <!-- 5. Gestion des branches -->
+    <div class="mb-4">
+      <h2>5. Gestion des branches</h2>
+      <div class="mb-3">
+        <pre class="bg-light p-3 border rounded"><code># Créer une nouvelle branche
+git branch nouvelle_branche</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Basculer sur une branche
+git checkout nouvelle_branche</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Créer et basculer sur une nouvelle branche
+git checkout -b nouvelle_branche</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Fusionner une branche dans la branche courante
+git merge branche_a_fusionner</code></pre>
+      </div>
+    </div>
+
+    <!-- 6. Commandes avancées -->
+    <div class="mb-4">
+      <h2>6. Commandes avancées</h2>
+      <div class="mb-3">
+        <pre class="bg-light p-3 border rounded"><code># Voir l'historique des commits
+git log</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Vérifier l'état du dépôt
+git status</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Annuler des modifications mises en scène
+git reset &lt;fichier&gt;</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Annuler un commit (soft reset)
+git reset --soft HEAD~1</code></pre>
+        <pre class="bg-light p-3 border rounded"><code># Revenir à un commit spécifique
+git checkout &lt;commit_id&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- 7. Bonnes pratiques -->
+    <div class="mb-4">
+      <h2>7. Bonnes pratiques et conseils</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Utiliser des messages de commit clairs et explicites.</li>
+        <li class="list-group-item">Créer une branche pour chaque nouvelle fonctionnalité ou correction.</li>
+        <li class="list-group-item">Effectuer des commits fréquents pour un historique détaillé.</li>
+        <li class="list-group-item">Utiliser un dépôt distant (ex : GitHub) pour la sauvegarde et la collaboration.</li>
+      </ul>
+    </div>
+
+    <!-- 8. Conclusion -->
+    <div class="mb-4">
+      <h2>8. Conclusion</h2>
+      <p>Git est un outil puissant et flexible pour la gestion de version. Ce guide couvre les bases et quelques commandes avancées pour vous aider à démarrer. Continuez à explorer et à pratiquer pour tirer pleinement profit de Git.</p>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

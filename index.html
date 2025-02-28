@@ -3,300 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guide d'utilisation de Docker</title>
+  <title>Accueil - Guide d'utilisation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Insertion du Navbar (vous pouvez inclure navbar.html si votre serveur le supporte) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Docker Guide</a>
+    <a class="navbar-brand" href="index.html">StudyConnect</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+           <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="docker.html">Guide Docker</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="git.html">Guide Git</a>
+           </li>
+        </ul>
+      </div>
     </div>
   </nav>
   
   <div class="container mt-4">
-    <h1 class="text-center mb-4">Guide complet d'utilisation de Docker</h1>
-
-    <!-- 1. Introduction -->
-    <div class="mb-4">
-      <h2>1. Introduction à Docker</h2>
-      <p>Docker est une plateforme open-source qui permet de créer, déployer et exécuter des applications dans des conteneurs légers et portables. Elle offre une solution efficace pour isoler les applications et leurs dépendances, facilitant ainsi le déploiement sur différents environnements.</p>
-    </div>
-
-    <!-- 2. Installation -->
-    <div class="mb-4">
-      <h2>2. Installation de Docker</h2>
-      <h3>Windows</h3>
-      <ol>
-        <li>Télécharger <a href="https://www.docker.com/products/docker-desktop/" target="_blank">Docker Desktop</a></li>
-        <li>Exécuter l'installateur et suivre les instructions</li>
-        <li>Activer WSL 2 si nécessaire</li>
-      </ol>
-
-      <h3>macOS</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>brew install --cask docker</code></pre>
-        <p>Lancer Docker et vérifier avec :</p>
-        <pre class="bg-light p-3 border rounded"><code>docker --version</code></pre>
-      </div>
-
-      <h3>Linux</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>sudo apt update
-sudo apt install -y docker.io
-docker --version
-sudo usermod -aG docker $USER</code></pre>
-      </div>
-    </div>
-
-    <!-- 3. Concepts clés -->
-    <div class="mb-4">
-      <h2>3. Concepts clés</h2>
-      <ul class="list-group">
-        <li class="list-group-item"><strong>Image</strong> : Un modèle pour créer un conteneur</li>
-        <li class="list-group-item"><strong>Conteneur</strong> : Une instance d'une image Docker</li>
-        <li class="list-group-item"><strong>Dockerfile</strong> : Fichier décrivant la construction d'une image</li>
-        <li class="list-group-item"><strong>Volumes</strong> : Permettent de stocker des données persistantes</li>
-        <li class="list-group-item"><strong>Réseaux</strong> : Connectent les conteneurs entre eux</li>
-      </ul>
-    </div>
-
-    <!-- 4. Commandes essentielles -->
-    <div class="mb-4">
-      <h2>4. Commandes Docker essentielles</h2>
-      <h3>Gestion des conteneurs</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker run -it ubuntu bash  # Exécuter un conteneur interactif</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker run -d --name mon_container nginx  # Exécuter un conteneur en arrière-plan</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker ps  # Lister les conteneurs actifs</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker stop mon_container  # Arrêter un conteneur</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker rm mon_container  # Supprimer un conteneur</code></pre>
-      </div>
-
-      <h3>Gestion des images</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker pull nginx  # Télécharger une image depuis Docker Hub</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker images  # Lister les images locales</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker rmi nginx  # Supprimer une image</code></pre>
-      </div>
-
-      <h3>Construire une image personnalisée</h3>
-      <p>Créer un fichier <code>Dockerfile</code> :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>FROM ubuntu:latest
-RUN apt update && apt install -y nginx
-CMD ["nginx", "-g", "daemon off;"]</code></pre>
-      </div>
-      <p>Construire l’image :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker build -t mon_nginx .</code></pre>
-      </div>
-      <p>Lancer un conteneur :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker run -d -p 8080:80 mon_nginx</code></pre>
-      </div>
-    </div>
-
-    <!-- 5. Volumes et réseaux -->
-    <div class="mb-4">
-      <h2>5. Gestion des volumes et des réseaux</h2>
-      <h3>Volumes</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker volume create mon_volume
-docker run -d -v mon_volume:/data nginx</code></pre>
-      </div>
-      <h3>Réseaux</h3>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker network create mon_reseau
-docker network connect mon_reseau mon_container</code></pre>
-      </div>
-    </div>
-
-    <!-- 6. Docker Compose -->
-    <div class="mb-4">
-      <h2>6. Docker Compose</h2>
-      <p>Docker Compose permet de gérer plusieurs conteneurs avec un fichier YAML.</p>
-      <p>Exemple de fichier <code>docker-compose.yml</code> :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>version: '3'
-services:
-  web:
-    image: nginx
-    ports:
-      - "8080:80"
-  db:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root</code></pre>
-      </div>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker-compose up -d  # Démarrer les services
-docker-compose down  # Arrêter les services</code></pre>
-      </div>
-    </div>
-
-    <!-- 7. Logs et monitoring -->
-    <div class="mb-4">
-      <h2>7. Gestion des logs et monitoring</h2>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>docker logs mon_container  # Voir les logs d’un conteneur</code></pre>
-        <pre class="bg-light p-3 border rounded"><code>docker stats mon_container  # Obtenir des statistiques sur un conteneur</code></pre>
-      </div>
-    </div>
-
-    <!-- 8. Commandes supplémentaires pour développeurs -->
-    <div class="mb-4">
-      <h2>8. Commandes supplémentaires pour développeurs</h2>
-      
-      <h4>8.1 Inspection et documentation</h4>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Détails d’un conteneur ou d'une image
-docker inspect &lt;container_or_image_id&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Historique d'une image
-docker history &lt;image_name&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Informations système de Docker
-docker info</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Vérifier la version
-docker version</code></pre>
-      </div>
-      
-      <h4>8.2 Manipulation de conteneurs et images</h4>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Exécuter une commande dans un conteneur en cours d'exécution
-docker exec -it &lt;container_name&gt; bash</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Voir les modifications du système de fichiers d’un conteneur
-docker diff &lt;container_name&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Créer une image à partir d’un conteneur modifié
-docker commit &lt;container_name&gt; &lt;new_image_name&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Copier des fichiers entre le conteneur et l'hôte
-docker cp &lt;container_name&gt;:&lt;path_in_container&gt; &lt;path_on_host&gt;</code></pre>
-      </div>
-      
-      <h4>8.3 Gestion des images</h4>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Taguer une image
-docker tag &lt;image_id&gt; &lt;repository&gt;:&lt;tag&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Pousser une image vers un registre
-docker push &lt;repository&gt;:&lt;tag&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Sauvegarder une image dans un fichier tar
-docker save -o &lt;file_name.tar&gt; &lt;image_name&gt;</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Charger une image depuis un fichier tar
-docker load -i &lt;file_name.tar&gt;</code></pre>
-      </div>
-      
-      <h4>8.4 Maintenance et nettoyage</h4>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Supprimer toutes les ressources non utilisées
-docker system prune -a</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Supprimer uniquement les conteneurs arrêtés
-docker container prune</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Supprimer les images non utilisées
-docker image prune -a</code></pre>
-      </div>
-      
-      <h4>8.5 Commandes avancées avec Docker Compose</h4>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Afficher les logs de tous les services
-docker-compose logs -f</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Exécuter une commande dans un service en cours d'exécution
-docker-compose exec &lt;service_name&gt; bash</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Construire ou reconstruire les services
-docker-compose build</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Valider la configuration docker-compose.yml
-docker-compose config</code></pre>
-      </div>
-    </div>
-
-    <!-- 9. Sécurité et bonnes pratiques -->
-    <div class="mb-4">
-      <h2>9. Sécurité et bonnes pratiques</h2>
-      <p>Pour renforcer la sécurité et optimiser l'utilisation de Docker :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Exécuter un conteneur avec un utilisateur non-root
-docker run -u 1000:1000 mon_image</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Scanner une image pour détecter des vulnérabilités
-docker scan mon_image</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Limiter les ressources allouées à un conteneur
-docker run -d --memory=512m --cpus=1 mon_image</code></pre>
-      </div>
-    </div>
-
-    <!-- 10. Multi-stage builds -->
-    <div class="mb-4">
-      <h2>10. Multi-stage builds (Optimisation Dockerfile)</h2>
-      <p>Les builds multi-étapes permettent de réduire la taille des images en séparant la phase de construction de l'image finale.</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Exemple de Dockerfile multi-stage
-FROM node:18 AS builder
-WORKDIR /app
-COPY . .
-RUN npm install && npm run build
-
-FROM nginx:latest
-COPY --from=builder /app/build /usr/share/nginx/html</code></pre>
-      </div>
-    </div>
-
-    <!-- 11. Logs avancés -->
-    <div class="mb-4">
-      <h2>11. Gestion avancée des logs</h2>
-      <p>Pour une gestion plus poussée des logs :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Exporter les logs d’un conteneur vers un fichier
-docker logs mon_container > logs.txt</code></pre>
-        <pre class="bg-light p-3 border rounded"><code># Exemple de configuration de driver de logs dans un fichier docker-compose.yml
-logging:
-  driver: "json-file"
-  options:
-    max-size: "10m"
-    max-file: "3"</code></pre>
-      </div>
-    </div>
-
-    <!-- 12. Orchestration avec Kubernetes -->
-    <div class="mb-4">
-      <h2>12. Orchestration avec Kubernetes</h2>
-      <p>Pour les projets de plus grande envergure, Kubernetes permet d'orchestrer plusieurs conteneurs sur un cluster. Voici un exemple de configuration simple d'un Pod :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code>apiVersion: v1
-kind: Pod
-metadata:
-  name: mon-app
-spec:
-  containers:
-    - name: mon-container
-      image: nginx
-      ports:
-        - containerPort: 80</code></pre>
-      </div>
-    </div>
-
-    <!-- 13. Docker Swarm -->
-    <div class="mb-4">
-      <h2>13. Docker Swarm</h2>
-      <p>Docker Swarm offre une solution d'orchestration légère pour gérer plusieurs machines. Quelques commandes de base :</p>
-      <div class="mb-3">
-        <pre class="bg-light p-3 border rounded"><code># Initialiser un cluster Swarm
-docker swarm init
-
-# Créer un service sur le cluster
-docker service create --name mon-service -p 80:80 nginx
-
-# Lister les services du Swarm
-docker service ls</code></pre>
-      </div>
-    </div>
-
-    <!-- 14. Conclusion -->
-    <div class="mb-4">
-      <h2>14. Conclusion</h2>
-      <p>Docker simplifie le déploiement et la gestion des applications grâce à ses conteneurs portables et reproductibles. Ce guide couvre les fonctionnalités de base ainsi que des commandes et pratiques avancées pour renforcer la sécurité, optimiser les images et orchestrer des environnements complexes. N'hésitez pas à explorer davantage pour tirer le meilleur parti de Docker !</p>
-    </div>
+    <h1 class="text-center mb-4">Bienvenue sur le Guide d'utilisation</h1>
+    <p class="lead text-center">Utilisez le menu ci-dessus pour naviguer entre le Guide Docker et le Guide Git.</p>
   </div>
+        <img src="img/StudyConnect" >
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
